@@ -25,19 +25,25 @@ public class Application {
 		case 2:
 			break;
 		case 3:
-			System.out.print("Enter the values of Constants, a:");
+			System.out.print("Enter the value of a:");
 			double a = s.nextDouble();
 			
-			System.out.print("\nEnter b:");
+			System.out.print("Enter the value of b:");
 			double b = s.nextDouble();
 			
-			System.out.print("\nEnter the values of x:");
+			System.out.print("Enter the value of x:");
 			double x = s.nextDouble();
 			
 			F5 f5obj = new F5();
-			double result = f5obj.calc_F5(a, b, x);
 			
-			System.out.printf("\nThe value returned by F5: ab^x = %f" ,result);						
+			try {
+				double result = f5obj.calc_F5(a, b, x);
+				System.out.printf("\nThe value returned by F5: ab^x = %f" ,result);	
+			}
+			catch(Exception e) {
+				System.out.println("Undefined output: " +e.toString());
+			}
+								
 			break;
 		case 4:
 			break;
