@@ -63,6 +63,19 @@ public class Application {
             }
             break;
         case 4:
+            System.out.print("Enter the value of x:");
+            double base = s.nextDouble();
+
+            System.out.print("Enter the value of y:");
+            long exponent = s.nextLong();
+
+            try {
+                double result = F7.myPow(base, exponent);
+                System.out.printf("\nThe value returned by F5: x^y = %f" ,result);
+            }
+            catch(Exception e) {
+                System.out.println("Undefined output: " +e.toString());
+            }
             break;
         default:
             System.out.println("Enter a valid choice !!");
