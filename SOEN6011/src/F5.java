@@ -26,6 +26,12 @@ public class F5 {
         }
 
         double result = 1;
+        boolean isNegative = false;
+        
+        if (power < 0) {
+            isNegative = true;
+            power = -1 * power;
+        }
 
         while (power > 0) {
             if (power % 2 == 1) {
@@ -36,6 +42,10 @@ public class F5 {
             base = base * base;
         }
 
-        return a * result;
+        if (isNegative){
+            return a / result;            
+        }else {
+            return a * result;
+        }
     }
 }
