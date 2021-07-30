@@ -1,10 +1,23 @@
+/*
+ * F5Test.java
+ * Version: 1.0
+ * July 30, 2021
+ * Copyright: Naveen Vuppula
+ */
+
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Class which is responsible for unit testing F5.
+ */
 public class F5Test {
     
     F5 f5obj = new F5();
     
+    /**
+     * Test1
+     */
     @Test
     public void test1() {
         double a = 2;
@@ -13,6 +26,9 @@ public class F5Test {
         Assert.assertEquals(1458.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test2
+     */
     @Test
     public void test2() {
         double a = 6;
@@ -21,6 +37,9 @@ public class F5Test {
         Assert.assertEquals(6.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test3
+     */
     @Test
     public void test3() {
         double a = 518;
@@ -29,6 +48,9 @@ public class F5Test {
         Assert.assertEquals(518.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test4
+     */
     @Test
     public void test4() {
         double a = 125;
@@ -37,6 +59,9 @@ public class F5Test {
         Assert.assertEquals(0.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test5
+     */
     @Test(expected = IllegalArgumentException.class)
     public void test5() {
         double a = 89;
@@ -45,6 +70,9 @@ public class F5Test {
         f5obj.calc_F5(a, base, power);
     }
     
+    /**
+     * Test6
+     */
     @Test
     public void test6() {
         double a = -10;
@@ -53,6 +81,9 @@ public class F5Test {
         Assert.assertEquals(-640.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test7
+     */
     @Test
     public void test7() {
         double a = 10;
@@ -61,6 +92,9 @@ public class F5Test {
         Assert.assertEquals(0.15625, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test8
+     */
     @Test
     public void test8() {
         double a = 10;
@@ -69,6 +103,9 @@ public class F5Test {
         Assert.assertEquals(640.0, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test9
+     */
     @Test
     public void test9() {
         double a = -20;
@@ -77,6 +114,9 @@ public class F5Test {
         Assert.assertEquals(0.625, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test10
+     */
     @Test
     public void test10() {
         double a = 134520;
@@ -85,6 +125,9 @@ public class F5Test {
         Assert.assertEquals(1.1617373940313053E184, f5obj.calc_F5(a, base, power), 0.00000000001);
     }
     
+    /**
+     * Test11
+     */
     @Test
     public void test11() {
         double a = 520;
