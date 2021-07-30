@@ -1,34 +1,41 @@
+/*
+ * F5.java
+ * Version: 1.0
+ * July 30, 2021
+ * Copyright: Naveen Vuppula
+ */
 
+/**
+ * Class which is responsible for calculating F5.
+ */
 public class F5 {
-	
-	public double calc_F5(double a, double b, double x) {
-		//Check base conditions.
-		if (x==0) {
-			return a;
-		}
-		else if (b ==0 && x>0) {
-			return 0;
-		}
-		else if (b==0 && x<0) {
-			return 1/0;
-		}
-		
-		double result = 1;
-		double power = x;
-		double base = b;
-		int i =0;
-		
-		while (power > 0) {
-			i = i + 1;
-			//System.out.println("Iteration#" +i +"base=" +base +"power=" +power +"result=" +result);
-			if (power %2 == 1) {
-				result = result * base;
-			}
-			
-			power = (int)power /2;
-			base = base * base;
-		}
-		
-		return a*result;
-	}
+    /**
+     * Method to calculate the value of function F5 by taking input values.
+     */
+    public double calc_F5(double a, double base, int power) {
+        // Check base conditions.
+        if (power == 0) {
+            return a;
+        } else if (base == 0) {
+            if (power > 0) {
+                return 0;
+            } else if (power < 0) {
+                throw new IllegalArgumentException("Base = 0 and Power < 0 results in " 
+                        + "Division by Zero.");
+            }
+        }
+
+        double result = 1;
+
+        while (power > 0) {
+            if (power % 2 == 1) {
+                result = result * base;
+            }
+
+            power = power / 2;
+            base = base * base;
+        }
+
+        return a * result;
+    }
 }
