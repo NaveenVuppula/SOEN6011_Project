@@ -52,7 +52,7 @@ public class Application {
 
                 F5 f5obj = new F5();
                 double result = f5obj.calc_F5(a, b, x);
-                System.out.printf("\nThe value returned by F5: ab^x = %f", result);
+                System.out.println("\nThe value returned by F5: ab^x = " +result);
 
             } catch (InputMismatchException e) {
                 System.out.println("Enter Valid values. " + e.toString());
