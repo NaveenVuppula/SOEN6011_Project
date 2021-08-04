@@ -20,14 +20,15 @@ public class F5 {
             if (power > 0) {
                 return 0;
             } else if (power < 0) {
-                throw new IllegalArgumentException("Base = 0 and Power < 0 results in " 
-                        + "Division by Zero.");
+                throw new IllegalArgumentException("Base = 0 and Power < 0 results in " + "Division by Zero.");
             }
+        } else if (a == 0) {
+            return 0;
         }
 
         double result = 1;
         boolean isNegative = false;
-        
+
         if (power < 0) {
             isNegative = true;
             power = -1 * power;
@@ -42,9 +43,9 @@ public class F5 {
             base = base * base;
         }
 
-        if (isNegative){
-            return a / result;            
-        }else {
+        if (isNegative) {
+            return a / result;
+        } else {
             return a * result;
         }
     }
