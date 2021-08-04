@@ -12,7 +12,7 @@ public class F5 {
     /**
      * Method to calculate the value of function F5 by taking input values.
      */
-    public double calc_F5(double a, double base, long power) {
+    public double calc_F5(double a, double base, int power) {
         // Check base conditions.
         if (power == 0) {
             return a;
@@ -33,7 +33,8 @@ public class F5 {
             isNegative = true;
             power = -1 * power;
         }
-
+        
+        //Do base^power.
         while (power > 0) {
             if (power % 2 == 1) {
                 result = result * base;
@@ -43,6 +44,7 @@ public class F5 {
             base = base * base;
         }
 
+        //return the result.
         if (isNegative) {
             return a / result;
         } else {
