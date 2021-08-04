@@ -52,12 +52,20 @@ public class Application {
 
                 F5 f5obj = new F5();
                 double result = f5obj.calc_F5(a, b, x);
-                System.out.println("\nThe value returned by F5: ab^x = " +result);
+                System.out.println("\nThe value returned by F5: ab^x = " + result);
+
+                if (result == Double.POSITIVE_INFINITY) {
+                    throw new ArithmeticException("Result exceeded Maximum Value of " + Double.MAX_VALUE);
+                } else if (result == Double.NEGATIVE_INFINITY) {
+                    throw new ArithmeticException("Result exceeded Minimum Value of " + Double.MIN_VALUE);
+                }
 
             } catch (InputMismatchException e) {
                 System.out.println("Enter Valid values. " + e.toString());
             } catch (IllegalArgumentException e) {
-                System.out.println("Undefined output: " + e.toString());
+                System.out.println("Undefined output. " + e.toString());
+            } catch (ArithmeticException e) {
+                System.out.println("Overflowed result. " + e.toString());
             } catch (Exception e) {
                 System.out.println(e.toString());
             }
@@ -71,10 +79,9 @@ public class Application {
 
             try {
                 double result = F7.myPow(base, exponent);
-                System.out.printf("\nThe value returned by F5: x^y = %f" ,result);
-            }
-            catch(Exception e) {
-                System.out.println("Undefined output: " +e.toString());
+                System.out.printf("\nThe value returned by F5: x^y = %f", result);
+            } catch (Exception e) {
+                System.out.println("Undefined output: " + e.toString());
             }
             break;
         default:
