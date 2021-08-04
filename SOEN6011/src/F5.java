@@ -12,7 +12,7 @@ public class F5 {
     /**
      * Method to calculate the value of function F5 by taking input values.
      */
-    public double calc_F5(double a, double base, int power) {
+    public double calc_F5(double a, double base, long power) {
         // Check base conditions.
         if (power == 0) {
             return a;

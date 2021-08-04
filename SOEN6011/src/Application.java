@@ -48,7 +48,7 @@ public class Application {
                 double b = s.nextDouble();
 
                 System.out.print("Enter the value of x:");
-                int x = s.nextInt();
+                long x = s.nextLong();
 
                 F5 f5obj = new F5();
                 double result = f5obj.calc_F5(a, b, x);
