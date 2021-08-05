@@ -20,7 +20,7 @@ public class Application {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         System.out.println("Welcome to SOEN 6011 Project. Choose from the Menu:\n");
-        System.out.println("1. arccos(x)\n2. sinh(x)\n3. ab^x\n4. x^y\n");
+        System.out.println("1. tan(x)\n2. sinh(x)\n3. ab^x\n4. x^y\n");
 
         int ch = s.nextInt();
 
@@ -55,9 +55,11 @@ public class Application {
                 System.out.println("\nThe value returned by F5: ab^x = " + result);
 
                 if (result == Double.POSITIVE_INFINITY) {
-                    throw new ArithmeticException("Result exceeded Maximum Value of " + Double.MAX_VALUE);
+                    throw new ArithmeticException("Result exceeded Maximum Value of "
+                + Double.MAX_VALUE);
                 } else if (result == Double.NEGATIVE_INFINITY) {
-                    throw new ArithmeticException("Result exceeded Minimum Value of " + Double.MIN_VALUE);
+                    throw new ArithmeticException("Result exceeded Minimum Value of " 
+                + Double.MIN_VALUE);
                 }
 
             } catch (InputMismatchException e) {
