@@ -88,9 +88,6 @@ public class Application {
             }
             catch (IllegalArgumentException e) {
                 System.out.println("divide by zero exception");
-            }catch (Exception e) {
-                System.out.println(e.toString());
-                System.out.printf("\nThe value returned by F5: x^y = %f", result);
             } catch (Exception e) {
                 System.out.println("Undefined output: " + e.toString());
             }
