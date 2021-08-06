@@ -1,40 +1,49 @@
+/**
+ * Implementation for function 7
+ */
 public class F7 {
-    public static double myPow(double x, long y) {
+    /**
+     * Method to calculate the value of function F7 x^y
+     * @param base the base of the function
+     * @param exponent the exponent of the function
+     * @return the value of function F7 x^y
+     */
+    public static double myPow(double base, long exponent) {
 
 
         boolean isNegative = false;
 
-        if (x < 0 && y % 2 != 0) {
+        if (base < 0 && exponent % 2 != 0) {
             isNegative = true;
         }
 
-        if (x == 0 && y == 0) {
+        if (base == 0 && exponent == 0) {
             return 0;
         }
 
-        if (x == 0 && y < 0) {
+        if (base == 0 && exponent < 0) {
 
             throw new IllegalArgumentException("x = 0 and y is negative number will cause divide by zero exception");
 
 
         }
 
-        if (x == 0 && y > 0) {
+        if (base == 0 && exponent > 0) {
             return 0;
         }
 
-        if (y == 0) {
+        if (exponent == 0) {
             return 1;
         }
 
-        if(y < 0){
-            y = -y;
-            x = 1 / x;
+        if(exponent < 0){
+            exponent = -exponent;
+            base = 1 / base;
         }
 
         double result = 1;
 
-        while(y != 0){
+        while(exponent != 0){
             if (result == 0 && !isNegative) {
                 return Double.POSITIVE_INFINITY;
             }
@@ -43,12 +52,12 @@ public class F7 {
                 return Double.NEGATIVE_INFINITY;
             }
 
-            if((y & 1) != 0) {
-                result *= x;
+            if((exponent & 1) != 0) {
+                result *= base;
             }
 
-            x *= x;
-            y >>>= 1;
+            base *= base;
+            exponent >>>= 1;
 
         }
 

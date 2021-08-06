@@ -73,8 +73,13 @@ public class Application {
                 double result = F7.myPow(base, exponent);
                 System.out.printf("\nThe value returned by F5: x^y = %f" ,result);
             }
-            catch(Exception e) {
-                System.out.println("Undefined output: " +e.toString());
+            catch(InputMismatchException e) {
+                System.out.println("Invalid Input: the x could be floating number or integer. y should be an integer");
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println("divide by zero exception");
+            }catch (Exception e) {
+                System.out.println(e.toString());
             }
             break;
         default:
