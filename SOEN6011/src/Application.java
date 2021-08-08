@@ -73,13 +73,13 @@ public class Application {
             }
             break;
         case 4:
-            System.out.print("Enter the value of x:");
-            double base = s.nextDouble();
-
-            System.out.print("Enter the value of y:");
-            long exponent = s.nextLong();
-
             try {
+                System.out.print("Enter the value of x:");
+                double base = s.nextDouble();
+
+                System.out.print("Enter the value of y:");
+                long exponent = s.nextLong();
+
                 double result = F7.myPow(base, exponent);
                 System.out.printf("\nThe value returned by F5: x^y = %f" ,result);
             }
@@ -88,7 +88,10 @@ public class Application {
             }
             catch (IllegalArgumentException e) {
                 System.out.println("divide by zero exception");
-            } catch (Exception e) {
+            }catch (ArithmeticException e) {
+                System.out.println("infinity");
+            }
+            catch (Exception e) {
                 System.out.println("Undefined output: " + e.toString());
             }
             break;

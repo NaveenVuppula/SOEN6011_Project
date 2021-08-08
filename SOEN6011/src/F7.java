@@ -1,3 +1,4 @@
+
 /**
  * Implementation for function 7
  */
@@ -44,12 +45,8 @@ public class F7 {
         double result = 1;
 
         while(exponent != 0){
-            if (result == 0 && !isNegative) {
-                return Double.POSITIVE_INFINITY;
-            }
-
-            if (result == 0 && isNegative) {
-                return Double.NEGATIVE_INFINITY;
+            if (result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY) {
+                throw new ArithmeticException();
             }
 
             if((exponent & 1) != 0) {
