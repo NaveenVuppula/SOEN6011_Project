@@ -9,14 +9,8 @@ public class F7 {
      * @param exponent the exponent of the function
      * @return the value of function F7 x^y
      */
+
     public static double myPow(double base, long exponent) {
-
-
-        boolean isNegative = false;
-
-        if (base < 0 && exponent % 2 != 0) {
-            isNegative = true;
-        }
 
         if (base == 0 && exponent == 0) {
             return 0;
