@@ -53,17 +53,9 @@ public class Application {
                 F5 f5obj = new F5();
                 double result = f5obj.calc_F5(a, b, x);
                 System.out.println("\nThe value returned by F5: ab^x = " + result);
-
-                if (result == Double.POSITIVE_INFINITY) {
-                    throw new ArithmeticException("Result exceeded Maximum Value of "
-                + Double.MAX_VALUE);
-                } else if (result == Double.NEGATIVE_INFINITY) {
-                    throw new ArithmeticException("Result exceeded Minimum Value of " 
-                + Double.MIN_VALUE);
-                }
-
+                
             } catch (InputMismatchException e) {
-                System.out.println("Enter Valid values. " + e.toString());
+                System.out.println("Enter Valid values. a, b should be Integer or Float. x should be Integer. " + e.toString());
             } catch (IllegalArgumentException e) {
                 System.out.println("Undefined output. " + e.toString());
             } catch (ArithmeticException e) {

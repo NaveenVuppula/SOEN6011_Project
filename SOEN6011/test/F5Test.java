@@ -150,23 +150,23 @@ public class F5Test {
     /**
      * Test case: 13, Requirement ID: 10
      */
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void test13() {
         double a = 178.32;
         double base = 89.9324561;
         int power = 512;
-        Assert.assertEquals(Double.POSITIVE_INFINITY, f5obj.calc_F5(a, base, power), 0.00000000001);
+        f5obj.calc_F5(a, base, power);
     }
     
     /**
      * Test case: 14, Requirement ID: 10
      */
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void test14() {
         double a = -912.34;
         double base = 567.87;
         int power = 890;
-        Assert.assertEquals(Double.NEGATIVE_INFINITY, f5obj.calc_F5(a, base, power), 0.00000000001);
+        f5obj.calc_F5(a, base, power);
     }
     
     /**

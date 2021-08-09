@@ -21,13 +21,13 @@ public class F5 {
                 return 0;
             } else if (power < 0) {
                 throw new IllegalArgumentException("Base = 0 and Power < 0 results in " 
-            + "Division by Zero.");
+            + "Division by Zero issue.");
             }
         } else if (a == 0) {
             return 0;
         }
 
-        double result = 1;
+        double value = 1;
         boolean isNegative = false;
 
         if (power < 0) {
@@ -38,18 +38,30 @@ public class F5 {
         // Do base^power.
         while (power > 0) {
             if (power % 2 == 1) {
-                result = result * base;
+                value = value * base;
             }
 
             power = power / 2;
             base = base * base;
         }
 
-        // return the result.
+        // Calculate the result.
+        double result;
         if (isNegative) {
-            return a / result;
+            result = a / value;
         } else {
-            return a * result;
+            result = a * value;
+        }
+        
+        //Check for infinity values.
+        if (result == Double.POSITIVE_INFINITY) {
+            throw new ArithmeticException("Result exceeded Maximum Value of "
+        + Double.MAX_VALUE);
+        } else if (result == Double.NEGATIVE_INFINITY) {
+            throw new ArithmeticException("Result exceeded Minimum Value of " 
+        + Double.MIN_VALUE);
+        }else {
+            return result;
         }
     }
 }
